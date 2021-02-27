@@ -13,27 +13,24 @@
 
 
 def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
     filename = 'referat.txt'
     with open(filename, 'r', encoding='UTF-8') as f:
         data = f.read()
-        print(f'1. Symbols: {len(data)}')
-        print(f'3. Words: {len(data.split())}')
-        data = data.replace('.', '!')
-        with open('referat2.txt', 'w', encoding='UTF-8') as ff:
-            ff.write(data)
+
+    print(f'1. Symbols: {len(data)}')
+    print(f'3. Words: {len(data.split())}')
+    data = data.replace('.', '!')
+
+    with open('referat2.txt', 'w', encoding='UTF-8') as ff:
+        ff.write(data)
 
 
 def check_it():
     with open('referat2.txt', 'r', encoding='UTF-8') as ff:
         lines = ff.readlines()
-        for line in lines:
-            print(line)
+        print(*lines, sep='\n')
 
 
 if __name__ == "__main__":
     main()
-    # check_it()
+    check_it()

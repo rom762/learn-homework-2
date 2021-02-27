@@ -28,8 +28,6 @@ def main():
     with open('users.csv', 'w', newline='') as f:
         writer = csv.DictWriter(f, columns, delimiter=';')
         writer.writeheader()
-        for user in users:
-            writer.writerow(user)
 
 
 if __name__ == "__main__":
